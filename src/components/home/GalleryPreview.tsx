@@ -1,6 +1,7 @@
 import { galleryConfig } from '@/config/gallery';
 import { GalleryGrid } from '@/components/gallery/GalleryGrid';
 import { Button } from '@/components/ui/Button';
+import { FadeIn } from '@/components/ui/FadeIn';
 
 const PREVIEW_COUNT = 6;
 
@@ -14,6 +15,7 @@ export function GalleryPreview() {
       aria-labelledby="gallery-heading"
       className="scroll-mt-20 bg-stone-50 py-16 sm:py-20"
     >
+      <FadeIn direction="left" delay={300}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 max-w-2xl">
           <h2
@@ -35,6 +37,7 @@ export function GalleryPreview() {
           </Button>
         </div>
       </div>
-    </section>
+    </FadeIn>
+  </section>
   );
 }

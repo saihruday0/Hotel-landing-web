@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/Button';
 import { MapEmbed } from '@/components/location/MapEmbed';
 import { RouteButtons } from '@/components/location/RouteButtons';
 import { hotelConfig } from '@/config/hotel';
+import { FadeIn } from '@/components/ui/FadeIn';
 
 /** Homepage Section 7: Location preview. Data comes from `hotelConfig.location`. */
 export function LocationPreview() {
@@ -16,6 +17,7 @@ export function LocationPreview() {
       aria-labelledby="location-heading"
       className="scroll-mt-20 bg-stone-50 py-16 sm:py-20"
     >
+      <FadeIn direction="right" delay={300}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">
@@ -65,6 +67,7 @@ export function LocationPreview() {
           <MapEmbed variant="compact" />
         </div>
       </div>
-    </section>
+    </FadeIn>
+  </section>
   );
 }

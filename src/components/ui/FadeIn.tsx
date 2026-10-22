@@ -6,8 +6,8 @@ interface FadeInProps {
   children: React.ReactNode;
   className?: string;
   direction?: 'up' | 'down' | 'left' | 'right' | 'none';
-  delay?: number; // Delay in ms, e.g. 100, 200
-  duration?: number; // Duration in ms, default 600ms
+  delay?: number;    // In milliseconds, e.g., 0, 150, 300
+  duration?: number; // In milliseconds, default 700ms
 }
 
 export function FadeIn({
@@ -15,7 +15,7 @@ export function FadeIn({
   className = '',
   direction = 'up',
   delay = 0,
-  duration = 600,
+  duration = 700,
 }: FadeInProps) {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef<HTMLDivElement>(null);
@@ -26,38 +26,40 @@ export function FadeIn({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            // Unobserve once revealed so it doesn't re-trigger
+            // Once it reveals, unobserve so it stays visible
             if (domRef.current) observer.unobserve(domRef.current);
           }
         });
       },
       {
-        threshold: 0.15, // Triggers when 15% of the element is visible
-        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1, // Fires when 10% of element is scrolled into view
+        rootMargin: '0px 0px -40px 0px',
       }
     );
 
-    const current = domRef.current;
-    if (current) observer.observe(current);
+    const el = domRef.current;
+    if (el) observer.observe(el);
 
     return () => {
-      if (current) observer.unobserve(current);
+      if (el) observer.unobserve(el);
     };
   }, []);
 
-  const getDirectionClasses = () => {
+  const getTransform = () => {
+    if (isVisible) return 'translate-x-0 translate-y-0 opacity-100';
+
     switch (direction) {
       case 'up':
-        return isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0';
+        return 'translate-y-12 opacity-0';
       case 'down':
-        return isVisible ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0';
+        return '-translate-y-12 opacity-0';
       case 'left':
-        return isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0';
+        return 'translate-x-12 opacity-0';
       case 'right':
-        return isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0';
+        return '-translate-x-12 opacity-0';
       case 'none':
       default:
-        return isVisible ? 'opacity-100' : 'opacity-0';
+        return 'opacity-0';
     }
   };
 
@@ -68,7 +70,7 @@ export function FadeIn({
         transitionDuration: `${duration}ms`,
         transitionDelay: `${delay}ms`,
       }}
-      className={`transition-all ease-out transform will-change-[opacity,transform] ${getDirectionClasses()} ${className}`}
+      className={`transition-all cubic-bezier(0.16, 1, 0.3, 1) transform ${getTransform()} ${className}`}
     >
       {children}
     </div>

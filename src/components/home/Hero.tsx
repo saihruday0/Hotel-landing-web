@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/Button';
 import { FallbackImage } from '@/components/ui/FallbackImage';
 import { hotelConfig } from '@/config/hotel';
 
+
 /** Path under /public. If the file is missing, the dark teal backdrop shows instead. */
 const HERO_IMAGE = '/images/hotel/hero.jpg';
 
@@ -58,7 +59,7 @@ export function Hero() {
           <p className="mt-4 text-xl font-medium text-stone-100 sm:text-2xl">
             {tagLine}
           </p>
-          <p className="mt-4 max-w-125 text-base leading-relaxed text-stone-200 sm:text-sm">
+          <p className="mt-4 max-w-115 text-base leading-relaxed text-stone-200 sm:text-sm">
             {description}
           </p>
 

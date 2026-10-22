@@ -4,6 +4,7 @@ import { Clock, ExternalLink, MapPin, MessageCircle, Phone } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button';
 import { hotelConfig } from '@/config/hotel';
+import { FadeIn } from '@/components/ui/FadeIn';
 
 const newTabHint = <span className="sr-only"> (opens in a new tab)</span>;
 
@@ -43,6 +44,7 @@ export function ContactSection() {
       aria-labelledby="contact-heading"
       className="scroll-mt-20 bg-white py-16 sm:py-20"
     >
+      <FadeIn direction="up" delay={300}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 max-w-2xl">
           <h2
@@ -187,6 +189,7 @@ export function ContactSection() {
           </div>
         )}
       </div>
+    </FadeIn>
     </section>
   );
 }

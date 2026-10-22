@@ -2,6 +2,7 @@ import { BedDouble, Building2, Compass, Users, type LucideIcon } from 'lucide-re
 
 import { FallbackImage } from '@/components/ui/FallbackImage';
 import { hotelConfig } from '@/config/hotel';
+import { FadeIn } from '@/components/ui/FadeIn';
 
 /** Path under /public. If the file is missing, a neutral panel is shown. */
 const ABOUT_IMAGE = '/images/hotel/about.jpg';
@@ -45,6 +46,7 @@ export function AboutSection() {
       aria-labelledby="about-heading"
       className="scroll-mt-20 bg-white py-16 sm:py-20"
     >
+      <FadeIn direction="up" delay={300}>
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-14 lg:px-8">
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-stone-100">
           <FallbackImage
@@ -91,6 +93,7 @@ export function AboutSection() {
           </ul>
         </div>
       </div>
-    </section>
+    </FadeIn>
+  </section>
   );
 }
