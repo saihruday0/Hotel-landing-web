@@ -40,4 +40,6 @@ export const hotelConfig: HotelInfo = {
     { id: 'booking-com', name: 'Booking.com', url: '' },
     { id: 'agoda', name: 'Agoda', url: '' },
   ],
+  policies: [],
+  socialLinks: [],
 };

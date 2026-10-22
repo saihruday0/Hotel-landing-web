@@ -104,6 +104,17 @@ export interface BookingPlatform {
 
 /* ------------------------------ Hotel ------------------------------ */
 
+export interface SocialLink {
+  platform: 'facebook' | 'instagram' | 'twitter' | 'youtube';
+  url: string;
+}
+
+export interface HotelPolicy {
+  title: string;
+  description: string;
+}
+
+// Ensure HotelInfo includes them:
 export interface HotelInfo {
   name: string;
   tagLine: string;
@@ -112,4 +123,6 @@ export interface HotelInfo {
   contact: ContactConfig;
   location: LocationConfig;
   bookingPlatforms: BookingPlatform[];
+  policies?: HotelPolicy[];
+  socialLinks?: SocialLink[];
 }
