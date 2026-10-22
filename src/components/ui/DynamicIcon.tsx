@@ -85,16 +85,13 @@ const lookup = new Map<string, LucideIcon>(
 export interface DynamicIconProps extends Omit<LucideProps, 'ref'> {
   /** Lucide icon name, e.g. "Tv" or "ConciergeBell". */
   name: string;
-  /** Shown when `name` is unknown. Pass `null` to render nothing. */
-  fallback?: LucideIcon | null;
 }
 
 export function DynamicIcon({
   name,
-  fallback = Check,
   ...props
 }: DynamicIconProps) {
-  const Icon = lookup.get(normalize(name)) ?? fallback;
+  const Icon = lookup.get(normalize(name)) ?? Check;
 
   if (process.env.NODE_ENV !== 'production' && !lookup.has(normalize(name))) {
     console.warn(

@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
-import { Check, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 
 import { Button } from '@/components/ui/Button';
 import { DynamicIcon } from '@/components/ui/DynamicIcon';
 import { facilitiesConfig } from '@/config/facilities';
 import { hotelConfig } from '@/config/hotel';
+
+// NOTE: no 'use client' here. This is a Server Component so it can export `metadata`.
 
 const pageTitle = `Facilities | ${hotelConfig.name}, ${hotelConfig.locationName}`;
 const pageDescription = `See the facilities available at ${hotelConfig.name} in ${hotelConfig.locationName}, and how to confirm them before you book.`;
@@ -60,7 +62,7 @@ function buildAdvisoryNotes(): AdvisoryNote[] {
   return notes;
 }
 
-export default function FacilitiesPage() {
+export default function FacilitiesPage(): React.JSX.Element {
   const advisoryNotes = buildAdvisoryNotes();
 
   return (
@@ -98,9 +100,14 @@ export default function FacilitiesPage() {
                   className="flex h-full flex-col rounded-2xl border border-stone-200 bg-white p-6 sm:p-8"
                 >
                   <span className="flex h-14 w-14 items-center justify-center rounded-full bg-teal-100 text-teal-800">
+                    {/*
+                      Only serializable props cross the server/client boundary:
+                      `name` is a string, and DynamicIcon falls back to its own
+                      default icon for unknown names. Never pass a Lucide
+                      component (a function) as a prop here.
+                    */}
                     <DynamicIcon
                       name={facility.iconName}
-                      fallback={Check}
                       aria-hidden="true"
                       className="h-7 w-7"
                     />

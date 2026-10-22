@@ -1,3 +1,5 @@
+'use client';
+
 import { Clock, ExternalLink, MapPin, MessageCircle, Phone } from 'lucide-react';
 
 import { Button } from '@/components/ui/Button';

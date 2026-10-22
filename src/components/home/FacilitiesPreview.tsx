@@ -1,5 +1,3 @@
-import { Check } from 'lucide-react';
-
 import { Button } from '@/components/ui/Button';
 import { DynamicIcon } from '@/components/ui/DynamicIcon';
 import { facilitiesConfig } from '@/config/facilities';
@@ -41,7 +39,6 @@ export function FacilitiesPreview() {
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-teal-800">
                 <DynamicIcon
                   name={facility.iconName}
-                  fallback={Check}
                   aria-hidden="true"
                   className="h-6 w-6"
                 />

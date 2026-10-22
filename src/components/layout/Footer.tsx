@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { MapPin, Phone } from 'lucide-react';
 
@@ -164,7 +166,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-stone-200 pt-6 text-sm text-stone-600">
-          &copy; {new Date().getFullYear()} {name}. All rights reserved.
+          &copy; {2026} {name}. All rights reserved.
         </div>
       </div>
     </footer>

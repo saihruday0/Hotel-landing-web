@@ -15,6 +15,17 @@ export interface RoomOccupancy {
   children: number;
 }
 
+export interface GeoCoordinates {
+  latitude: number;
+  longitude: number;
+}
+
+export interface LocationConfig {
+  // ...existing fields
+  /** Optional verified coordinates. Omit to leave geo out of structured data. */
+  geo?: GeoCoordinates;
+}
+
 export interface Room {
   id: string;
   title: string;
