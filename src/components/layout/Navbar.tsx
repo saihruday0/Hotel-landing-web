@@ -141,9 +141,13 @@ export function Navbar() {
     const reduceMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     ).matches;
-    target.scrollIntoView({
+    const header = document.querySelector('header');
+    const headerHeight = header ? header.getBoundingClientRect().height : 72;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+    window.scrollTo({
+      top,
       behavior: reduceMotion ? 'auto' : 'smooth',
-      block: 'start',
     });
     history.pushState(null, '', `#${sectionId}`);
   };

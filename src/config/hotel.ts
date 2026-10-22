@@ -17,7 +17,7 @@ export const hotelConfig: HotelInfo = {
 
   contact: {
     phones: [],
-    whatsappNumber: '',
+    whatsappNumber: '99494 88288',
     address: '',
     checkInTime: '',
     checkOutTime: '',

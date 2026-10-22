@@ -29,7 +29,6 @@ export const roomsConfig: Room[] = [
     acType: 'AC',
     occupancy: { adults: 2, children: 1 },
     amenities: [
-      'Air Conditioning',
       'Television',
       'Hot & Cold Water',
       'Attached Bathroom',
@@ -50,7 +49,6 @@ export const roomsConfig: Room[] = [
     acType: 'AC',
     occupancy: { adults: 4, children: 2 },
     amenities: [
-      'Air Conditioning',
       'Television',
       'Hot & Cold Water',
       'Attached Bathroom',

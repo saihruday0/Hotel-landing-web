@@ -51,14 +51,14 @@ export function Hero() {
           <p className="text-base font-medium text-teal-100">{locationName}</p>
           <h1
             id="hero-heading"
-            className="mt-3 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="mt-3 text-5xl font-bold tracking-tight text-white sm:text-8xl lg:text-8xl"
           >
             {name}
           </h1>
           <p className="mt-4 text-xl font-medium text-stone-100 sm:text-2xl">
             {tagLine}
           </p>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-stone-200 sm:text-lg">
+          <p className="mt-4 max-w-125 text-base leading-relaxed text-stone-200 sm:text-sm">
             {description}
           </p>
 

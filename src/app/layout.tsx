@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Questrial } from 'next/font/google';
 import type { ReactNode } from 'react';
 
 import './globals.css';
@@ -10,8 +10,9 @@ import { HotelJsonLd } from '@/components/seo/HotelJsonLd';
 import { hotelConfig } from '@/config/hotel';
 import { cityFrom, siteUrl } from '@/lib/site';
 
-const inter = Inter({
+const gothic = Questrial({
   subsets: ['latin'],
+  weight: '400',
   display: 'swap',
 });
 
@@ -57,7 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en-IN">
       <body
-        className={`${inter.className} flex min-h-screen flex-col bg-white text-stone-900 antialiased`}
+        className={`${gothic.className} flex min-h-screen flex-col bg-white text-stone-900 antialiased`}
       >
         <HotelJsonLd />
 
