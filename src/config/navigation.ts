@@ -13,7 +13,7 @@ export interface NavItem {
 
 export const navItems: NavItem[] = [
   { label: 'Home', sectionId: null, path: '/' },
-  { label: 'Rooms & Tariffs', sectionId: 'rooms', path: '/rooms' },
+  { label: 'Rooms', sectionId: 'rooms', path: '/rooms' },
   { label: 'Facilities', sectionId: 'facilities', path: '/facilities' },
   { label: 'Gallery', sectionId: 'gallery', path: '/gallery' },
   { label: 'Location', sectionId: 'location', path: '/location' },

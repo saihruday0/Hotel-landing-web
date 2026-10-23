@@ -66,10 +66,10 @@ export default function LocationPage() {
     <main id="main-content">
       <header className="bg-teal-900 py-14 text-white sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-wide text-teal-100">
+          <p className="text-2xl font-semibold uppercase tracking-wide text-teal-100">
             {hotelConfig.name}
           </p>
-          <h1 className="mt-2 text-3xl font-bold sm:text-5xl">
+          <h1 className="mt-2 text-5xl font-bold sm:text-6xl">
             Location &amp; Directions
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-teal-50">
@@ -82,7 +82,7 @@ export default function LocationPage() {
         <section aria-labelledby="address-heading">
           <h2
             id="address-heading"
-            className="text-2xl font-bold text-stone-900 sm:text-3xl"
+            className="text-2xl font-bold text-stone-400 sm:text-3xl"
           >
             Our Address
           </h2>
@@ -91,7 +91,7 @@ export default function LocationPage() {
               aria-hidden="true"
               className="mt-1 h-6 w-6 shrink-0 text-teal-800"
             />
-            <address className="text-lg not-italic text-stone-800">
+            <address className="text-lg not-italic text-stone-400">
               <span className="block font-semibold">{hotelConfig.name}</span>
               {address || 'Address will be added soon.'}
             </address>
@@ -102,7 +102,7 @@ export default function LocationPage() {
         <section aria-labelledby="map-heading">
           <h2
             id="map-heading"
-            className="mb-4 text-2xl font-bold text-stone-900 sm:text-3xl"
+            className="mb-4 text-2xl font-bold text-stone-400 sm:text-3xl"
           >
             Map
           </h2>
@@ -112,7 +112,7 @@ export default function LocationPage() {
         <section aria-labelledby="tips-heading">
           <h2
             id="tips-heading"
-            className="text-2xl font-bold text-stone-900 sm:text-3xl"
+            className="text-2xl font-bold text-stone-400 sm:text-3xl"
           >
             Travel Tips for Pilgrims
           </h2>
@@ -139,7 +139,7 @@ export default function LocationPage() {
           <section aria-labelledby="nearby-heading">
             <h2
               id="nearby-heading"
-              className="text-2xl font-bold text-stone-900 sm:text-3xl"
+              className="text-2xl font-bold text-stone-400 sm:text-3xl"
             >
               Nearby Transport &amp; Attractions
             </h2>
